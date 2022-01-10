@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    
+    <div class=" row d-flex justify-content-around mt-5">
+        {% if form.roll_no %}
+            <h2> Update Student Details</h2>
+        {% else %}
+            <h2> Add Student Details</h2>
+        {% endif %}
+        <a href="/" class="btn btn-primary col-md-2">Student Information List</a>
+    </div>
+    <hr mt-2>
+    
+    <div>
+        <form method = "post">
+            {% csrf_token %}
+                {{stu_info|crispy}}
+                {{stu_academic|crispy}}
+            <input type="submit" class="btn btn-success">
+        </form>
+    </div>
+
+{% endblock content %}

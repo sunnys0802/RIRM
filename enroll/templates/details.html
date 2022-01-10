@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %} 
+    <div class=" row d-flex justify-content-around mt-5">
+        <h2 class="col-md-10">Student Academics Details</h2>
+    <a href="/" class="btn btn-primary col-md-2">Student Information List</a>
+    </div>
+    <hr mt-2>
+    {% if  stu_details %}
+        <div class="row">
+            <div class="col-4">
+                <h6>Roll No</h6>
+                <input type="text", class="form-control" disabled value="{{stu_details.roll_no.roll_no}}" >
+            </div>
+            <div class="col-4">
+                <h6>Name</h6>
+                <input type="text", class="form-control" disabled value="{{stu_details.roll_no.name}}" >
+            </div>
+            <div class="col-4">
+                <h6>Math</h6>
+                <input type="text", class="form-control" disabled value="{{stu_details.math}}">
+            </div>
+            <div class="col-4">
+                <h6>Physics</h6>
+                <input type="text", class="form-control" disabled value="{{stu_details.physics}}">
+            </div>
+            <div class="col-4">
+                <h6>Chemistry</h6>
+                <input type="text", class="form-control" disabled value="{{stu_details.chemistry}}">
+            </div>
+            <div class="col-4">
+                <h6>Biology</h6>
+                <input type="text", class="form-control" disabled value="{{stu_details.biology}}">
+            </div>
+            <div class="col-4">
+                <h6>English</h6>
+                <input type="text", class="form-control" disabled value="{{stu_details.english}}">
+            </div>
+
+        </div>
+    {% else %}
+        <div>No student Found..</div>
+    {% endif %}
+
+
+{% endblock content %}
